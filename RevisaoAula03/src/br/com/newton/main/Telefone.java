@@ -6,20 +6,40 @@ import java.util.Scanner;
 
 public class Telefone {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
-        Contato novoContato = new Contato();
+        Contato contato = new Contato();
 
         System.out.println("Ingresse um nome para o contato ");
-        String nome1 = sc.nextLine();
+        String nome = sc.nextLine();
+        contato.setNome(nome);
 
         System.out.println("Ingresse o numero de telefone valido ");
-        String tlf1 = sc.next();
+        String telefone = sc.next();
+        contato.setTelefone(telefone);
 
-        if(tlf1.length() == 9){
-        }
-        else {
+        if(contato.getTelefone().length() != 9){
             System.out.println("Telefone invalido");
         }
+        contato.excluir(contato);
+
+
+        System.out.println("Incluir contato ");
+        System.out.println("Ingresse um nome para o contato ");
+        nome = sc.nextLine();
+        contato.setNome(nome);
+        sc.nextLine();
+
+        System.out.println("Ingresse o numero de telefone valido ");
+        telefone = sc.nextLine();
+        contato.setTelefone(telefone);
+
+        contato.incluir(contato);
+
+
+
+
+
     }
 }
